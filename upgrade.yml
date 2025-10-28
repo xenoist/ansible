@@ -1,0 +1,10 @@
+---
+- hosts: mainserver
+  become: yes
+
+  tasks:
+  - name: upgrade all packages
+    raw: /usr/bin/dnf -y upgrade
+
+  - name: reboot system
+    raw: /usr/sbin/reboot
