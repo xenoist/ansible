@@ -10,7 +10,7 @@ mv yamllint-rename-to-dot-file .yamllint
 
 ### change settings in hosts.ini
 
-```
+
 [mainserver]
 127.0.0.1
 
@@ -19,7 +19,7 @@ mainserver
 
 ansible_ssh_user=my-user-for-ansibleto-use
 ansible_ssh_private_key_file=~/.ssh/id_ed25519-remote
-```
+
 
 ### annsible.cfg 
 
@@ -27,7 +27,10 @@ remote_tmp=/tmp could be changed if needed with jailed systems
 
 ### install-package.txt
 How to install a package.
+
+```
 ansible -i hosts.ini multi  -b -m package -a "name=chrony state=present"
+```
 
 ### install-logrotate.yml
 
@@ -48,7 +51,9 @@ check with crontab -l with root use.Better use other user.
 
 sets swapiness to 1, change if needed
 
+```
 ansible-playbook sysctl-swapiness.yml -i hosts.ini
+```
 
 ### Interresting things for RHEL Systems
 
