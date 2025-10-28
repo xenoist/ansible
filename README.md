@@ -49,7 +49,7 @@ check with crontab -l with root use.Better use other user.
 
 ### sysctl-swapiness.yml
 
-sets swapiness to 1, change ysctl_value: "1" if needed.
+sets swapiness to 1, change sysctl_value: "1" if needed.
 
 ```
 ansible-playbook sysctl-swapiness.yml -i hosts.ini
