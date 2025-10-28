@@ -18,6 +18,18 @@ Best would be restart to have no problem become root with my-user-for-ansible-to
 ```
 mv yamllint-rename-to-dot-file .yamllint
 ```
+### create a id_ed25519 ssh-keyfile
+
+```
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+The id_ed25519.pub must be allowed on the remote machine in the ~/.ssh/authorized_keys file.
+settings must be 600 for the file
+
+```
+chmod 600 ~/.ssh/authorized_keys
+```
 
 ### change settings in hosts.ini
 
@@ -29,7 +41,7 @@ mv yamllint-rename-to-dot-file .yamllint
 mainserver
 
 ansible_ssh_user=my-user-for-ansible-to-use\
-ansible_ssh_private_key_file=~/.ssh/id_ed25519-remote
+ansible_ssh_private_key_file=~/.ssh/id_ed25519
 
 
 ### annsible.cfg 
