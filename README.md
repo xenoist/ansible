@@ -55,6 +55,14 @@ sets swapiness to 1, change sysctl_value: "1" if needed.
 ansible-playbook sysctl-swapiness.yml -i hosts.ini
 ```
 
+### upgrade.yml
+
+Upgrade a RHEL system with dnf.
+
+```
+ansible-playbook upgrade.yml -i hosts.ini
+```
+
 ### Interresting things for RHEL Systems
 
 See https://dnf.readthedocs.org/en/latest/automatic.html
