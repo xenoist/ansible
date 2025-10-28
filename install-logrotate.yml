@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: Install logrotate.
+      dnf:
+        name:
+          - logrotate
+        state: present
+
+    - name: Make sure logrotate is started now and at boot.
+      service:
+        name: logrotate
+        state: started
+        enabled: yes
