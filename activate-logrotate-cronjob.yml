@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+        - name: Install Batchjobs on crontab
+          cron:
+                name: " Echo Test"
+                minute: "*/5"
+                hour: "*"
+                weekday: "0-6"
+                job: "/root/bin/echo-hello.sh > /root/bin/echo-hello.sh.log 2>&1"
+                disabled: "no"
+  tags:
+        - cronjobs
