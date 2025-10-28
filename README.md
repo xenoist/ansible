@@ -2,6 +2,17 @@
 
 ## What to do to start with simple settings for ansible.
 
+assumes to run with a user to become root.
+```
+visudo
+``` 
+my-user-for-ansible-to-use ALL=(ALL) NOPASSWD: ALL
+
+```
+sudo usermod -aG wheel my-user-for-ansible-to-use
+```
+Best would be restart to have no problem become root with my-user-for-ansible-to-use and ansible.
+
 ### change yamllint-rename-to-dot-file
 
 ```
@@ -17,7 +28,7 @@ mv yamllint-rename-to-dot-file .yamllint
 [multi:children]\
 mainserver
 
-ansible_ssh_user=my-user-for-ansibleto-use\
+ansible_ssh_user=my-user-for-ansible-to-use\
 ansible_ssh_private_key_file=~/.ssh/id_ed25519-remote
 
 
